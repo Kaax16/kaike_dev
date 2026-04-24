@@ -246,17 +246,17 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border-radius: 8px;
   background: var(--bg-2);
   border: 1px solid var(--border);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
   color: var(--text);
-  font-size: 1.4rem;
   margin-bottom: 14px;
 }
-
-.card .icon svg { display: block; }
 
 .card .name {
   font-weight: 600;

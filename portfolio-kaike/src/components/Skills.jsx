@@ -1,24 +1,14 @@
 import { motion } from "framer-motion";
-import {
-  SiHtml5,
-  SiCss,
-  SiJavascript,
-  SiPostgresql,
-  SiPython,
-  SiReact,
-  SiNodedotjs,
-} from "react-icons/si";
-import { FaDatabase } from "react-icons/fa";
 
 const skills = [
-  { name: "HTML",       Icon: SiHtml5,      level: 95 },
-  { name: "CSS",        Icon: SiCss,        level: 90 },
-  { name: "JavaScript", Icon: SiJavascript, level: 88 },
-  { name: "SQL",        Icon: FaDatabase,   level: 82 },
-  { name: "Python",     Icon: SiPython,     level: 85 },
-  { name: "React.js",   Icon: SiReact,      level: 80 },
-  { name: "Node.js",    Icon: SiNodedotjs,  level: 75 },
-  { name: "PostgreSQL", Icon: SiPostgresql, level: 78 },
+  { name: "HTML",       abbr: "H",   level: 95 },
+  { name: "CSS",        abbr: "#",   level: 90 },
+  { name: "JavaScript", abbr: "JS",  level: 88 },
+  { name: "SQL",        abbr: "DB",  level: 82 },
+  { name: "Python",     abbr: "Py",  level: 85 },
+  { name: "React.js",   abbr: "</>", level: 80 },
+  { name: "Node.js",    abbr: "N",   level: 75 },
+  { name: "PostgreSQL", abbr: "Pg",  level: 78 },
 ];
 
 export default function Skills() {
@@ -43,29 +33,27 @@ export default function Skills() {
       </motion.p>
 
       <div className="cards">
-        {skills.map(({ name, Icon, level }, i) => (
+        {skills.map((skill, i) => (
           <motion.div
             className="card"
-            key={name}
+            key={skill.name}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.05, duration: 0.4 }}
             whileHover={{ y: -3 }}
           >
-            <span className="icon">
-              <Icon />
-            </span>
-            <div className="name">{name}</div>
+            <span className="icon">{skill.abbr}</span>
+            <div className="name">{skill.name}</div>
             <div className="level-bar">
               <motion.span
                 initial={{ width: 0 }}
-                whileInView={{ width: `${level}%` }}
+                whileInView={{ width: `${skill.level}%` }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 + 0.2, duration: 0.7, ease: "easeOut" }}
               />
             </div>
-            <span className="level-text">{level}%</span>
+            <span className="level-text">{skill.level}%</span>
           </motion.div>
         ))}
       </div>
