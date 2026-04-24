@@ -9,6 +9,7 @@ import {
   SiNodedotjs,
 } from "react-icons/si";
 import { FaDatabase } from "react-icons/fa";
+import { useI18n } from "../i18n.jsx";
 
 const skills = [
   { name: "HTML",       Icon: SiHtml5,      level: 95 },
@@ -22,6 +23,7 @@ const skills = [
 ];
 
 export default function Skills() {
+  const { t } = useI18n();
   return (
     <section className="skills" id="skills">
       <motion.h2
@@ -30,7 +32,7 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        Skills
+        {t.skills.title}
       </motion.h2>
       <motion.p
         className="section-sub"
@@ -39,7 +41,7 @@ export default function Skills() {
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
       >
-        Tecnologias que utilizo no dia a dia.
+        {t.skills.sub}
       </motion.p>
 
       <div className="cards">

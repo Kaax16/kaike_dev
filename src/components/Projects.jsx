@@ -1,19 +1,14 @@
 import { motion } from "framer-motion";
+import { useI18n } from "../i18n.jsx";
 
-const projects = [
-  {
-    title: "Portfólio Pessoal",
-    description: "Site portfólio com React e animações discretas. Layout limpo e responsivo.",
-    tags: ["React", "CSS", "Framer Motion"],
-  },
-  {
-    title: "Em construção",
-    description: "Novos projetos em desenvolvimento. Em breve disponíveis neste espaço.",
-    tags: ["soon"],
-  },
+const tags = [
+  ["React", "CSS", "Framer Motion"],
+  ["soon"],
 ];
 
 export default function Projects() {
+  const { t } = useI18n();
+
   return (
     <section className="projects" id="projects">
       <motion.h2
@@ -22,7 +17,7 @@ export default function Projects() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        Projetos
+        {t.projects.title}
       </motion.h2>
       <motion.p
         className="section-sub"
@@ -31,14 +26,14 @@ export default function Projects() {
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
       >
-        Trabalhos selecionados.
+        {t.projects.sub}
       </motion.p>
 
       <div className="projects-grid">
-        {projects.map((p, i) => (
+        {t.projects.items.map((p, i) => (
           <motion.div
             className="project-card"
-            key={p.title}
+            key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -48,8 +43,8 @@ export default function Projects() {
             <h3>{p.title}</h3>
             <p>{p.description}</p>
             <div className="chips">
-              {p.tags.map((t) => (
-                <span className="chip" key={t}>{t}</span>
+              {tags[i]?.map((tag) => (
+                <span className="chip" key={tag}>{tag}</span>
               ))}
             </div>
           </motion.div>

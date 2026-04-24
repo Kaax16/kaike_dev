@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import foto from "../assets/foto.png";
+import { useI18n } from "../i18n.jsx";
 
 export default function Hero() {
+  const { t } = useI18n();
+
   return (
     <section className="hero" id="home">
       <motion.div
@@ -19,7 +22,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
-        Disponível para oportunidades
+        {t.hero.tag}
       </motion.span>
 
       <motion.h2
@@ -36,7 +39,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.45 }}
       >
-        <strong>Desenvolvedor</strong> — Ciência da Computação, 3º semestre
+        <strong>{t.hero.role}</strong> {t.hero.roleSuffix}
       </motion.p>
 
       <motion.p
@@ -45,7 +48,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
       >
-        Construo interfaces e sistemas focados em performance e código limpo.
+        {t.hero.desc}
       </motion.p>
 
       <motion.div
@@ -54,8 +57,8 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.75 }}
       >
-        <a className="btn btn-primary" href="#projects">Ver projetos</a>
-        <a className="btn btn-ghost" href="#skills">Skills</a>
+        <a className="btn btn-primary" href="#projects">{t.hero.ctaProjects}</a>
+        <a className="btn btn-ghost" href="#skills">{t.hero.ctaSkills}</a>
       </motion.div>
     </section>
   );

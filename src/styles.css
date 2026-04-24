@@ -69,6 +69,36 @@ body {
 
 .nav a:hover { color: var(--text); }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  color: var(--muted);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.lang-toggle:hover {
+  border-color: var(--muted);
+  background: #18181d;
+}
+
+.lang-toggle .active { color: var(--text); }
+.lang-toggle .sep { opacity: 0.4; }
+
 /* ===== HERO ===== */
 .hero {
   min-height: calc(100vh - 70px);
