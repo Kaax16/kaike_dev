@@ -1,0 +1,5 @@
+-----  banco portfolio  -----
+
+senha db: senha1234!@# 
+
+fazer com que ao entrar no portifolio ele peça o login do google e colocar um botao de curtir para ver o nome da pessoa que curtiu e que logou, o banco de dados é o postgres e que os dados fiquem salvos no banco.
