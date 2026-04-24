@@ -14,12 +14,12 @@ import { useI18n } from "../i18n.jsx";
 const skills = [
   { name: "HTML",       Icon: SiHtml5,      level: 95 },
   { name: "CSS",        Icon: SiCss,        level: 90 },
-  { name: "JavaScript", Icon: SiJavascript, level: 88 },
+  { name: "JavaScript", Icon: SiJavascript, level: 95 },
   { name: "SQL",        Icon: FaDatabase,   level: 82 },
-  { name: "Python",     Icon: SiPython,     level: 85 },
-  { name: "React.js",   Icon: SiReact,      level: 80 },
+  { name: "Python",     Icon: SiPython,     level: 84 },
+  { name: "React.js",   Icon: SiReact,      level: 68 },
   { name: "Node.js",    Icon: SiNodedotjs,  level: 75 },
-  { name: "PostgreSQL", Icon: SiPostgresql, level: 78 },
+  { name: "PostgreSQL", Icon: SiPostgresql, level: 73 },
 ];
 
 export default function Skills() {
